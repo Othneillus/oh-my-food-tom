@@ -1,0 +1,516 @@
+@charset "UTF-8";
+html {
+  font-size: 1em;
+  font-family: "Roboto", sans-serif;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.loader {
+  position: fixed;
+  background-color: white;
+  height: 100vh;
+  inset: 0;
+  z-index: 1;
+  opacity: 1;
+  animation: desappear 600ms 2s forwards;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  border: solid 10px transparent;
+  border-left-color: #9356DC;
+  border-right-color: #92E2D0;
+  border-bottom-color: #FF79DA;
+  border-radius: 50%;
+  animation: firstspin 2s infinite;
+  position: relative;
+}
+.loader div:nth-child(2) {
+  height: 120px;
+  width: 120px;
+  border: solid 10px transparent;
+  border-left-color: #9356DC;
+  border-top-color: #FF79DA;
+  border-bottom-color: #FF79DA;
+  animation: secondspin 2s infinite;
+  position: absolute;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header a {
+  text-decoration: none;
+  color: black;
+  position: absolute;
+  display: block;
+  left: 25px;
+  top: 25px;
+}
+.header i {
+  font-size: 25px;
+}
+.header h1 {
+  margin: 25px 0 5px 0;
+}
+
+.bandeau {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(rgb(187, 187, 187), 0.5%, #eaeaea);
+}
+.bandeau__contenu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bandeau__contenu p {
+  margin-left: 5px;
+}
+
+.section_presentation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #f6f6f6;
+  padding: 20px 20px 50px 20px;
+  text-align: center;
+}
+.section_presentation h2 {
+  padding: 0 20px 0 20px;
+}
+.section_presentation p {
+  font-size: 18px;
+}
+.section_presentation__btn {
+  background: linear-gradient(170deg, #FF79DA, #9356DC);
+  box-shadow: 4px 5px 5px lightgray;
+  color: white;
+  padding: 15px 20px 15px 20px;
+  border-radius: 50px;
+  border: none;
+  transition: 250ms;
+  cursor: pointer;
+  text-align: center;
+  max-width: 250px;
+  margin-top: 10px;
+}
+.section_presentation__btn:hover {
+  box-shadow: 8px 8px 2px #acabab;
+  filter: brightness(120%);
+}
+
+.section_fonctionnement {
+  padding: 20px 0 50px 0;
+}
+.section_fonctionnement h2 {
+  margin-left: 15px;
+}
+.section_fonctionnement__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.section_fonctionnement__list__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f6f6f6;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 4px 5px 5px lightgray;
+  padding: 10px 15px 10px 15px;
+  width: 80%;
+  margin: 10px 0 10px 0;
+  position: relative;
+  font-weight: bold;
+}
+.section_fonctionnement__list__btn i {
+  padding-right: 30px;
+  color: #7e7e7e;
+  position: absolute;
+  left: 40px;
+}
+.section_fonctionnement__list__btn .number {
+  position: absolute;
+  left: -12px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  padding: 4px;
+  background-color: #9356DC;
+  color: #fff;
+  border-radius: 50%;
+}
+.section_fonctionnement__list__btn:hover {
+  filter: brightness(95%);
+  cursor: pointer;
+}
+.section_fonctionnement__list__btn:hover i {
+  color: #9356DC;
+}
+
+.section_restaurant {
+  background: #f6f6f6;
+  padding: 30px 0 60px 0;
+}
+.section_restaurant h2 {
+  margin-left: 15px;
+}
+.section_restaurant__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.section_restaurant__list__card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  width: 90%;
+  height: 220px;
+  font-size: 14px;
+  box-shadow: 4px 5px 5px lightgray;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.section_restaurant__list__card.new::before {
+  position: absolute;
+  content: "Nouveau";
+  padding: 5px;
+  border-radius: 2px;
+  background: #92E2D0;
+  color: #195c4d;
+  top: 5%;
+  right: 5%;
+  font-weight: 700;
+}
+.section_restaurant__list__card i {
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 10%;
+  right: 8%;
+}
+.section_restaurant__list__card .fa-solid {
+  color: transparent;
+  background: linear-gradient(170deg, #FF79DA, #9356DC);
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: all 350ms;
+}
+.section_restaurant__list__card .fa-solid:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+.section_restaurant__list__card a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.section_restaurant__list__card:hover {
+  cursor: pointer;
+}
+.section_restaurant__list__card img {
+  width: 100%;
+  height: 70%;
+  border-radius: 20px 20px 0 0;
+  object-fit: cover;
+  margin-bottom: 5px;
+}
+.section_restaurant__list__card h3,
+.section_restaurant__list__card p {
+  font-size: 16px;
+  margin: 5px 0px 0px 10px;
+}
+
+.footer {
+  background: #353535;
+  color: white;
+  padding: 15px 15px 35px 30px;
+}
+.footer .logofooter {
+  margin: 10px 0 10px 0;
+}
+.footer a {
+  text-decoration: none;
+  color: white;
+}
+.footer p {
+  margin: 6px;
+}
+.footer p i {
+  margin-right: 4px;
+}
+
+/* Pages à la Française*/
+.bandeau_alafrancaise {
+  width: 100%;
+  height: 300px;
+}
+.bandeau_alafrancaise img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.section_menu {
+  background: #f6f6f6;
+  border-radius: 40px 40px 0 0;
+  width: 100%;
+  padding: 15px 20px 15px 20px;
+  box-sizing: border-box;
+  transform: translate(0px, -40px);
+  margin-bottom: -40px;
+  position: relative;
+}
+.section_menu__titre h1 {
+  font-family: "Shrikhand", sans-serif;
+  font-size: 1.8em;
+}
+.section_menu__titre i {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 4%;
+  right: 8%;
+}
+.section_menu__titre .fa-solid {
+  color: transparent;
+  background: linear-gradient(170deg, #FF79DA, #9356DC);
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: all 350ms;
+}
+.section_menu__titre .fa-solid:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+.section_menu .underline {
+  position: relative;
+  font-size: 17px;
+  margin-top: 40px;
+}
+.section_menu .underline::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  background: #92E2D0;
+  width: 40px;
+  height: 3px;
+}
+.section_menu__card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 4px 5px 5px lightgray;
+  margin-bottom: 15px;
+  animation: appear 2s;
+  overflow: hidden;
+  display: flex;
+  animation-fill-mode: both;
+}
+.section_menu__card:nth-child(1) {
+  animation-delay: 0ms;
+}
+.section_menu__card:nth-child(2) {
+  animation-delay: 333ms;
+}
+.section_menu__card:nth-child(3) {
+  animation-delay: 666ms;
+}
+.section_menu__card:nth-child(4) {
+  animation-delay: 999ms;
+}
+.section_menu__card:nth-child(5) {
+  animation-delay: 1200ms;
+}
+.section_menu__card__text {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 0;
+  overflow: hidden;
+  width: 80%;
+}
+.section_menu__card__text h3 {
+  margin: 0 0 5px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.section_menu__card__text p {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.section_menu__card__price {
+  margin-left: auto;
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
+}
+.section_menu__card__check {
+  margin-right: -80px;
+  width: 80px;
+  background: #92E2D0;
+  transition: 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.section_menu__card__check i {
+  color: #fff;
+  font-size: 30px;
+}
+.section_menu__card:hover {
+  cursor: pointer;
+}
+.section_menu__card:hover .section_menu__card__check {
+  margin-right: 0px;
+}
+.section_menu__card:hover .section_menu__card__check i {
+  animation: rotate 0.5s;
+}
+.section_menu h2 {
+  font-weight: 400;
+  font-size: 20px;
+}
+.section_menu__btn {
+  background: linear-gradient(170deg, #FF79DA, #9356DC);
+  box-shadow: 4px 5px 5px lightgray;
+  color: white;
+  padding: 15px 20px 15px 20px;
+  border-radius: 50px;
+  border: none;
+  transition: 250ms;
+  cursor: pointer;
+  text-align: center;
+  max-width: 250px;
+  margin-top: 10px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+.section_menu__btn:hover {
+  box-shadow: 8px 8px 2px #acabab;
+  filter: brightness(120%);
+}
+
+@keyframes appear {
+  from {
+    transform: translateY(40%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes desappear {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes firstspin {
+  0% {
+    transform: rotate(0deg);
+    border-width: 10px;
+  }
+  50% {
+    transform: rotate(180deg);
+    border-width: 1px;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-width: 10px;
+  }
+}
+@keyframes secondspin {
+  0% {
+    transform: rotate(0deg);
+    border-width: 1px;
+  }
+  50% {
+    transform: rotate(-180deg);
+    border-width: 10px;
+  }
+  100% {
+    transform: rotate(-360deg);
+    border-width: 1px;
+  }
+}
+@media (min-width: 768px) {
+  .section_restaurant {
+    display: flex;
+    flex-direction: column;
+  }
+  .section_restaurant__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: auto;
+  }
+  .section_restaurant__list__card {
+    max-width: 335px;
+  }
+}
+@media (min-width: 992px) {
+  .section_fonctionnement__list {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+  .section_fonctionnement__list__btn {
+    width: 26%;
+  }
+  .footer {
+    text-align: center;
+  }
+  .section_menu__all {
+    display: flex;
+    justify-content: space-around;
+  }
+  .section_menu__entrees, .section_menu__plats, .section_menu__desserts {
+    width: 30%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,188 @@
+/* Pages à la Française*/
+
+
+.bandeau_alafrancaise {
+    width: 100%;
+    height: 300px;
+
+    & img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+}
+
+
+
+
+.section_menu {
+
+    background: $color-grey;
+    border-radius: 40px 40px 0 0;
+    width: 100%;
+    padding: 15px 20px 15px 20px;
+    box-sizing: border-box;
+    transform: translate(0px, -40px);
+    margin-bottom: -40px;
+    position: relative;
+
+
+    &__titre {
+
+        & h1 {
+            font-family: "Shrikhand", sans-serif;
+            font-size: 1.8em;
+        }
+
+        & i {
+            font-size: 1.5rem;
+            position: absolute;
+            top: 4%;
+            right: 8%;
+        }
+
+        & .fa-solid {
+            color: transparent;
+            background: linear-gradient(170deg, $color-secondary, $color-primary);
+            background-clip: text;
+            -webkit-background-clip: text;
+            opacity: 0;
+            transition: all 350ms;
+
+            &:hover {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+
+    }
+
+    & .underline {
+        position: relative;
+        font-size: 17px;
+        margin-top: 40px;
+    }
+
+    & .underline::before {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        background: $color-third;
+        width: 40px;
+        height: 3px;
+    }
+
+    &__card {
+        background: white;
+        border-radius: 15px;
+        @include box-shadow;
+        margin-bottom: 15px;
+        animation: appear 2s;
+        overflow: hidden;
+        display: flex;
+        animation-fill-mode: both;
+
+
+        &:nth-child(1) {
+            animation-delay: 0ms;
+        }
+
+        &:nth-child(2) {
+            animation-delay: 333ms;
+        }
+
+        &:nth-child(3) {
+            animation-delay: 666ms;
+        }
+
+        &:nth-child(4) {
+            animation-delay: 999ms;
+        }
+
+        &:nth-child(5) {
+            animation-delay: 1200ms;
+        }
+
+
+
+        &__text {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            margin: 0;
+            overflow: hidden;
+            width: 80%;
+
+
+            & h3 {
+                margin: 0 0 5px 0;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            & p {
+                margin: 0;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+
+        }
+
+        &__price {
+            margin-left: auto;
+            display: flex;
+            align-items: flex-end;
+            padding: 10px;
+    
+        }
+
+        &__check {
+            margin-right: -80px;
+            width: 80px;
+            background: $color-third;
+            transition: 0.5s;
+            @include flexcenter();
+
+            & i {
+                color: #fff;
+                font-size: 30px;
+            }
+
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:hover &__check {
+            margin-right: 0px;
+
+            & i {
+                animation: rotate 0.5s;
+            }
+        }
+
+
+
+
+    }
+
+
+
+
+    & h2 {
+        font-weight: 400;
+        font-size: 20px;
+    }
+
+    &__btn {
+        @include btn();
+        margin: auto;
+        margin-top: 50px;
+        margin-bottom: 40px;
+    }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "projet-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch sass/main.scss:style.css",
+    "prefix": "postcss style.css --use autoprefixer -d prefixed"
+  },
+
+  "author": "",
+  "license": "ISC",
+  "browserslist": "last 4 versions",
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CharonTom/OhMyFood.git"
+  },
+  
+  "bugs": {
+    "url": "https://github.com/CharonTom/OhMyFood/issues"
+  },
+  
+  "homepage": "https://github.com/CharonTom/OhMyFood#readme",
+  "dependencies": {
+    "sass": "^1.56.1"
+  }
+}
